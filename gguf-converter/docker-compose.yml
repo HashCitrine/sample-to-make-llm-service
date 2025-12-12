@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  gguf:
+    build: .
+    environment:
+      - MODEL_PATH=${MODEL_PATH}
+      - OUTPUT_F16=${OUTPUT_F16}
+      - OUTPUT_QUANT=${OUTPUT_QUANT}
+    volumes:
+      - ./gguf:/output
+    restart: "no"
